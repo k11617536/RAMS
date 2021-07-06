@@ -111,7 +111,8 @@ echo "Filename is not defined."
   <section id="contact" class="contact">
     <div class="container">
 
-      <h1><center>Request Form</center></h1> <br><br>
+      <h1><center>Request Form</center></h1>
+      <h4><center>Personal Information</center></h4> <br>
 
       <div class="row" data-aos="fade-up">
 
@@ -192,16 +193,7 @@ echo "Filename is not defined."
                           <div class="col-lg-12 form-group" id="sTOR" name="sTOR" hidden="hidden" >
                              
                           </div>
-                         
-
-                          <!-- concenrs -->
-
-
-
-
-                          
-
-
+                        
                          
                             </div>    
                     </div>
@@ -215,7 +207,7 @@ echo "Filename is not defined."
                           <div class="error-message"></div>
                           <div class="sent-message">Your message has been sent. Thank you!</div>
                       </div>
-                      <div class="text-center"><button type="submit" id="submit" name="submit">Send Message</button></div>
+                      <div class="text-center"><button type="submit" id="submit" name="submit">Next</button></div>
 					  
           </form>
 
@@ -297,7 +289,7 @@ echo "Filename is not defined."
 
 </script>
 
-// CONCERNS
+
 <script>
 
 

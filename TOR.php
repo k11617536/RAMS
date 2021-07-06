@@ -60,7 +60,7 @@ echo "Filename is not defined."
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   
-  <link href="assets/css/rstyle.css" rel="stylesheet">
+  <link href="assets/css/torstyle.css" rel="stylesheet">
 
  
 
@@ -111,36 +111,64 @@ echo "Filename is not defined."
   <section id="contact" class="contact">
     <div class="container">
 
-      <h1><center>Supporting Documents</center></h1> <br><br>
+      <h1><center>Request Form</center></h1>
+      <h4><center>Supporting Documments</center></h4> <br>
 
       <div class="row" data-aos="fade-up">
 
       
         <div class="col-lg-12">
-          <form action="TORDocu.php" method="post" enctype="multipart/form-data" >
+          <form action="TORDocu.php" method="post" enctype="multipart/form-data" class="border" >
             <div class="form-row">
 
               <div class="col-md-6 form-group">
 
+                            <!-- CONCENRS -->
+                          
+                            <select required id="concerns" class="form-control" name="concern" onchange="concern_function()">
+                              <option value="" disabled selected hidden>Choose Concern</option>
+                              <option>TOR</option>
+                                 <option>GRADE AUTHENTICATION</option>
+                                 <option>GOOD MORAL</option>
+                              </select> <br>
+                              <p style="font-size:13px"> Please complete the supporting documents below.</p>
                               
-                          <div class="col-lg-12 form-group" id="sTOR" name="sTOR" >
-                              <input type="file" name="file[]" id="file" multiple class="form-control">
+
+
+                          <div class="col-lg-12 form-group" id="sGM" name="sGM" hidden="hidden" >
+
+                              <input type="file" name="file"  class="form-control">
+							             <!-- <button type="submit" name="upload">UPLOAD FILE</button> -->
+
+                              
+                              <p style="font-size:13px"><a style="color:blue" href="request.php?path=supdocx/LetterFormat.docx"><u>LetterFormat.docx</u></a></p>
+                              
+                          </div>
+
+                          <div class="col-lg-12 form-group" id="sGA" name="sGA" hidden="hidden" >
+                              <input type="file" name="GAGoodMoral"  class="form-control"  id="GAGoodMoral">
                               <p style="font-size:13px"><a style="color:blue">Good Moral</a></p> 
 
+                              <input type="file" name="GaLetterFormat"  class="form-control"  id="GaLetterFormat">
+                              <p style="font-size:13px"><a style="color:blue" href="request.php?path=supdocx/LetterFormat.docx"><u>LetterFormat.docx</u></a></p> 
+
+                          </div>
+
+                          <div class="col-lg-12 form-group" id="sTOR" name="sTOR" hidden="hidden" >
+                              <input type="file" name="TORGM"  class="form-control"  id="TORGM">
+                              <p style="font-size:13px"><a style="color:blue">Good Moral</a></p> 
+
+                              <input type="file" name="TORGM"  class="form-control"  id="TORGM">
                               <p style="font-size:13px"><a style="color:blue">Grade</a></p> 
 
+                              <input type="file" name="TORLF"  class="form-control"  id="TORLF">
                               <p style="font-size:13px"><a style="color:blue" href="request.php?path=supdocx/LetterFormat.docx"><u>LetterFormat.docx</u></a></p> 
 
                           </div>
                          
-
+                          </div>   
+                          </div>
                           <!-- concenrs -->
-
-
-
-
-                          
-
 
                          
                             </div>    
@@ -149,6 +177,7 @@ echo "Filename is not defined."
                <div class="form-group">
                         <!-- <div class="validate"></div> -->
                       </div>
+
                       <div class="mb-3">
                           <div class="loading"></div>
                           <div class="error-message"></div>
@@ -156,16 +185,15 @@ echo "Filename is not defined."
                       </div>
                       <div class="text-center"><button type="submit" id="submit" name="submit" class="btn btn-warning" style="color: white;">Submit Documents</button></div>
 					  
-          </form>
+                      </div>
 
-		  
+                    </div>
 
-        </div>
+                  </div>
+                  </form>
+                </section>
 
-      </div>
 
-    </div>
-  </section>
 
 <br><br><br>
 
@@ -202,47 +230,12 @@ echo "Filename is not defined."
 
 <script src="assets/js/main.js"></script>
 
-
-<script>
-  function random_function()
-  {
-      var a=document.getElementById("college").value;
-      
-      if(a==="CCS")
-      {
-          var arr=[ "Choose Program",  "	I-ACSAD	"	,"	I-BCSAD	"	,"	II-ACSAD	"	,"	II-BCSAD	"	, "	III-ACSAD	"	,"	III-BCSAD	"	,"	IV-ACSAD	"	, "	IV-BCSAD	"	, "	I-AINS	"	, "	I-BINS	",
-            "	II-AINS	"	, "	II-BINS	"	, "	III-AINS	"	, "	III-BINS	"	, "	IV-ACNA	"	, "	IV-BCNA	"	, "	IV-AITSM	"	,  "	IV-BITSM	"	,
-            "	I-ACSSC	"	, "	I-BCSSC	"	, "	II-ACSSC	"	, "	II-BCSSC	"	, "	III-ACSSC	"	, "	III-BCSSC	"	,"	I-A APDEV	"	, "	I-B APDEV	"	, "	II-A APDEV	"	, "	II-B APDEV	"	, "	III-A APDEV	"	,
-            "	III-B APDEV	"	, "	I-A NETAD	"	, "	I-B NETAD	"	, "	II-A NETAD	"	, "	II-B NETAD	"	, "	III-A NETAD	"	, "	III-B NETAD	"	];
-      }
-      else if(a==="COE")
-      {
-          var arr=[ "Choose Program","I-ECE	"	,"	II-ECE	"	,"	III-ECE	"	,"	IV-ECE	"	, "	I-SPED	"	, "	II-SPED	"	, "	III-SPED	"	, "	IV-SPED	"	, "	Filipino	"	, "	I-FILIPINO	"	, "	II-FILIPINO	"	, "	III-FILIPINO	"	,
-            "	IV-FILIPINO	"	, "	I-GENSCI	"	, "	II-GENSCI	"	, "	III-GENSCI	"	, "	IV-GENSCI	"	, "	I-ENGLISH	"	, "	II-ENGLISH	"	, "	III-ENGLISH	"	, "	IV-ENGLISH	"	, "	I-MATH	"	, "	II-MATH	"	, "	III-MATH	"	,
-            "	IV-MATH	"	,  "	I-SOCSTUD	"	, "	II-SOCSTUD	"	, "	III-SOCSTUD	"	, "	IV-SOCSTUD	"	, "	I-ECE	"	,  "	II-ECE	"	, "	III-ECE	"	, "	IV-ECE	"	, "	I-SPED	"	,"	II-SPED	"	, "	III-SPED	"	, "	IV-SPED	"];
-      } 
-      var string="";
- 
-      
-
-
-   
-      for(i=0;i<arr.length;i++)
-      {
-          string=string+"<option value="+arr[i]+">"+arr[i]+"</option>";
-      }
-      document.getElementById("output").innerHTML=string;
-  }
-
-</script>
-
-// CONCERNS
 <script>
 
 
 function concern_function()
   {
-      var g=document.getElementById("concern").value;
+      var g=document.getElementById("concerns").value;
       
       if(g==="GOOD MORAL")
       {
@@ -250,12 +243,6 @@ function concern_function()
       document.getElementById("sGM").hidden = "";
       document.getElementById("sTOR").hidden = "hidden";
       document.getElementById("sGA").hidden = "hidden";
-	  
-	  document.getElementById("submit").onclick = function() {
-       window.location.href = "GoodMoral.php";     
-	   };
-	  
-
           
       }
       else if(g==="GRADE AUTHENTICATION")
@@ -263,9 +250,6 @@ function concern_function()
         document.getElementById("sGA").hidden = "";
         document.getElementById("sGM").hidden = "hidden";
         document.getElementById("sTOR").hidden = "hidden";
-		document.getElementById("submit").onclick = function() {
-        window.location.href = "GradeAuthentication.php";     
-	    };
 
       }
       else if(g==="TOR")
@@ -273,9 +257,6 @@ function concern_function()
         document.getElementById("sGA").hidden = "hidden";
         document.getElementById("sGM").hidden = "hidden";
         document.getElementById("sTOR").hidden = "";
-		document.getElementById("submit").onclick = function() {
-        window.location.href = "TOR.php";     
-	   };
 
       }
 
@@ -296,6 +277,7 @@ function concern_function()
   // }
 
   }
+
 
 </script>
 

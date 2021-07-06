@@ -60,7 +60,7 @@ echo "Filename is not defined."
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   
-  <link href="assets/css/rstyle.css" rel="stylesheet">
+  <link href="assets/css/gastyle.css" rel="stylesheet">
 
  
 
@@ -117,7 +117,7 @@ echo "Filename is not defined."
 
       
         <div class="col-lg-12">
-          <form action="uploading.php" method="post" enctype="multipart/form-data" >
+          <form action="uploading.php" method="post" enctype="multipart/form-data" class="php-email-form1" >
 		    
             <div class="form-row">
 
