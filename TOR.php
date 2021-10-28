@@ -125,43 +125,17 @@ echo "Filename is not defined."
 
                             <!-- CONCENRS -->
                           
-                            <select required id="concerns" class="form-control" name="concern" onchange="concern_function()">
-                              <option value="" disabled selected hidden>Choose Concern</option>
-                              <option>TOR</option>
-                                 <option>GRADE AUTHENTICATION</option>
-                                 <option>GOOD MORAL</option>
-                              </select> <br>
+                           
                               <p style="font-size:13px"> Please complete the supporting documents below.</p>
                               
 
-
-                          <div class="col-lg-12 form-group" id="sGM" name="sGM" hidden="hidden" >
-
-                              <input type="file" name="file"  class="form-control">
-							             <!-- <button type="submit" name="upload">UPLOAD FILE</button> -->
-
-                              
-                              <p style="font-size:13px"><a style="color:blue" href="request.php?path=supdocx/LetterFormat.docx"><u>LetterFormat.docx</u></a></p>
-                              
-                          </div>
-
-                          <div class="col-lg-12 form-group" id="sGA" name="sGA" hidden="hidden" >
-                              <input type="file" name="GAGoodMoral"  class="form-control"  id="GAGoodMoral">
+                              <input type="file" name="file[]"  class="form-control"  id="TORGM" >
                               <p style="font-size:13px"><a style="color:blue">Good Moral</a></p> 
 
-                              <input type="file" name="GaLetterFormat"  class="form-control"  id="GaLetterFormat">
-                              <p style="font-size:13px"><a style="color:blue" href="request.php?path=supdocx/LetterFormat.docx"><u>LetterFormat.docx</u></a></p> 
-
-                          </div>
-
-                          <div class="col-lg-12 form-group" id="sTOR" name="sTOR" hidden="hidden" >
-                              <input type="file" name="TORGM"  class="form-control"  id="TORGM">
-                              <p style="font-size:13px"><a style="color:blue">Good Moral</a></p> 
-
-                              <input type="file" name="TORGM"  class="form-control"  id="TORGM">
+                              <input type="file" name="file[]"  class="form-control"  id="TORGM">
                               <p style="font-size:13px"><a style="color:blue">Grade</a></p> 
 
-                              <input type="file" name="TORLF"  class="form-control"  id="TORLF">
+                              <input type="file" name="file[]"  class="form-control"  id="TORLF">
                               <p style="font-size:13px"><a style="color:blue" href="request.php?path=supdocx/LetterFormat.docx"><u>LetterFormat.docx</u></a></p> 
 
                           </div>

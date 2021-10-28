@@ -125,9 +125,13 @@ echo "Filename is not defined."
                           
 
                           <div class="col-lg-12 form-group" id="sGA" name="sGA"  >
-                              <input type="file" name="file[]" id="file" multiple>
+                              <input type="file" name="file[]" id="file" class="form-control">
 							
-                              <p style="font-size:13px"><a style="color:blue">Good Moral<p style="font-size:13px"><a style="color:blue" href="request.php?path=supdocx/LetterFormat.docx"><u>LetterFormat.docx</u></a></p> 
+                              <p style="font-size:13px"><a style="color:blue">Good Moral<p style="font-size:13px">
+							  
+							  <input type="file" name="file[]" id="file" class="form-control">
+							  
+							    <p style="font-size:13px"><a style="color:blue" href="request.php?path=supdocx/LetterFormat.docx"><u>LetterFormat.docx</u></a></p> 
 
 
                               

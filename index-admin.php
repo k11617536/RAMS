@@ -45,7 +45,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                   <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="media align-items-center">
                         <div class="media-body  ml-2  d-none d-lg-block">
-                            <span class="mb-0 text-sm  font-weight-bold">ADMIN <?php echo htmlspecialchars($_SESSION["lname"]); ?>&nbsp;</span>
+                            <span class="mb-0 text-sm  font-weight-bold"> <?php echo htmlspecialchars($_SESSION["email"]); ?>&nbsp;</span>
                           </div>
                         <i class="fas fa-user fa-fw"></i>
                         <i class="fa fa-caret-down"></i>

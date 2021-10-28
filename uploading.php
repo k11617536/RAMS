@@ -1,6 +1,20 @@
 <?php
+
+ 
    if(isset($_POST['submit']))
    {
+   $server = "localhost";
+ $username = "root";
+$password = "";
+$dbname = "concerndb";
+$con=mysqli_connect($server,$username,$password,$dbname);
+ // Check connection
+  if (mysqli_connect_errno())
+  {
+echo "Failed to connect to MySQL: " . mysqli_connect_error();
+ }
+    $time = date('Y-m-d H:i:s');
+ 
     $file = $_FILES['file'];
 	$fileName = $_FILES['file']['name'];
     $fileTmpName = $_FILES['file']['tmp_name'];
@@ -19,9 +33,13 @@
 	 {
 	    if($fileSize < 1000000)
 		{
-		 $fileNameNew = uniqid('',true).".".$fileActualExt;
+		$result = mysqli_query($con,"SELECT * FROM tblstudent");
+         while($row = mysqli_fetch_array($result)){
+	
+		 $fileNameNew = date('m-d-Y H i sa ')."-".$row['umakid']."-".$row['lname']."-".$row['fname']."-".$fileName.".".$fileActualExt;
 		 $fileDestination = 'upload/'.$fileNameNew;
 		 move_uploaded_file($fileTmpName, $fileDestination);
+		 }
 		 header("Location: index-user.html?uploadsucess");
 		}else{
 		  echo "your file is too big";
